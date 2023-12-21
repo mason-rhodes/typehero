@@ -58,3 +58,22 @@ export type MinusOneFromPositiveNumber<T extends number> =
         >
       : ArrayToNumber<[...Rest, SubFromNum[Last]]>
     : T;
+
+// Tests
+
+import type { Equal, Expect } from "type-testing";
+
+type cases = [
+  Expect<Equal<MinusOneFromPositiveNumber<1>, 0>>,
+  Expect<Equal<MinusOneFromPositiveNumber<55>, 54>>,
+  Expect<Equal<MinusOneFromPositiveNumber<3>, 2>>,
+  Expect<Equal<MinusOneFromPositiveNumber<100>, 99>>,
+  Expect<Equal<MinusOneFromPositiveNumber<1101>, 1100>>,
+  Expect<Equal<MinusOneFromPositiveNumber<0>, -1>>,
+  Expect<
+    Equal<
+      MinusOneFromPositiveNumber<9_007_199_254_740_992>,
+      9_007_199_254_740_991
+    >
+  >
+];
