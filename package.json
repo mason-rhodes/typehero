@@ -12,5 +12,8 @@
   "dependencies": {
     "@type-challenges/utils": "^0.1.1",
     "type-testing": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1"
   }
 }
